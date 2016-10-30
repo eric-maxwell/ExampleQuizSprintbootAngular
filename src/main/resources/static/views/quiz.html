@@ -1,0 +1,15 @@
+<div class="section">
+<h3>Question</h3>
+<p>{{quizCtrl.getQuestion().text}}</p>
+<form>
+    <div ng-repeat="choice in quizCtrl.getQuestion().choices">
+        <label class="radio-inline">
+            <input type="radio" name="optradio" value="{{choice.text}}" ng-model="quizCtrl.selectedChoiceText">{{choice.text}}
+        </label>
+    </div>
+    <button ng-click="quizCtrl.next(quizCtrl.getQuestion())">Next</button>
+    <div>
+        {{$this.grade}}
+    </div>
+</form>
+</div>

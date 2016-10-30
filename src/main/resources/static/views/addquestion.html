@@ -1,0 +1,28 @@
+<div class="section">
+    <h3>Add Questions</h3>
+    <div>
+        <form>
+            <label for="question">Question</label>
+            <input id="question" value="" ng-model="adminCtrl.question.text"/>
+            <button ng-click="adminCtrl.addQuestion()">Next</button>
+        </form>
+        <table class="table">
+            <tr>
+                <th>Question
+                </th>
+                <th>Edit
+                </th>
+                <th> Delete
+                </th>
+            </tr>
+            <tr ng-repeat="question in adminCtrl.questions">
+                <td>{{question.text}}
+                </td>
+                <td><button ng-click="adminCtrl.editQuestion(question)">Edit</button>
+                </td>
+                <td><button ng-click="adminCtrl.removeQuestion(question.id)">Remove</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

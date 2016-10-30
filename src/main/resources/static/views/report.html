@@ -1,0 +1,26 @@
+<div class="section">
+    <h3>Report</h3>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Question
+                </th>
+                <th>Your Answer
+                </th>
+                <th>Correct
+                </th>
+            </tr>
+            <tr ng-repeat="answer in quizCtrl.grade.answers">
+                <td>{{answer.question.text}}
+                </td>
+                <td>{{answer.answer.text}}
+                </td>
+                <td>{{answer.isCorrect}}
+                </td>
+            </tr>
+            <tr>
+                <td>Grade: {{quizCtrl.grade.grade}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

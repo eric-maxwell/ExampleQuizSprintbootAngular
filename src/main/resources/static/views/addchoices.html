@@ -1,0 +1,28 @@
+<div class="section">
+    <h3>{{adminCtrl.getQuestion().text}} -- Question</h3>
+    <div>
+        <form>
+            <label for="choice">Choice</label>
+            <input id="choice" value="" ng-model="adminCtrl.choiceText"/>
+            <input type="checkbox" id="iscorrect" value="isCorrect" ng-model="adminCtrl.choiceIsCorrect"> Is Correct
+            <button ng-click="adminCtrl.addChoice()">Add</button>
+            <button ng-click="adminCtrl.saveQuestion()">Save</button>
+        </form>
+        <table class="table">
+            <tr>
+                <th>Choice
+                </th>
+                <th>Is Correct
+                </th>
+                <th>Remove</th>
+            </tr>
+            <tr ng-repeat="choice in adminCtrl.getQuestion().choices">
+                <td>{{choice.text}}
+                </td>
+                <td>{{choice.isCorrect}}
+                </td>
+                <td><button ng-click="adminCtrl.removeChoice(choice.index)">Remove</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
